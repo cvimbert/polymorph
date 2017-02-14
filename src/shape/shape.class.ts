@@ -11,9 +11,7 @@ export class Shape {
         public id:string = "",
         public attributes:ShapeAttribute<any>[] = []
     ) {
-        for (let attribute of attributes) {
-            this._attributesIndex[attribute.id] = attribute;
-        }
+        attributes.forEach(attribute => this._attributesIndex[attribute.id] = attribute);
     }
 
     pushAttribute(attribute:ShapeAttribute<any>) {
